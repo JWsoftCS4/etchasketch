@@ -40,7 +40,7 @@
     let cCanvasWidth=cCanvas.clientWidth;
     console.log(cCanvasWidth);
     let cSelect = document.getElementById("color-select");
-    let cWidth=64;
+    let cWidth=65;
     let cellsActivated=false;
     let drawColorID=cSelect.value;
 
@@ -123,8 +123,6 @@
     //Generate canvas:
     function generateCanvas()
     {
-        let cellWidth=((cCanvasWidth/cWidth))-2;
-        console.log("Cell width: "+cellWidth);
         for(let y=0;y<cWidth;y++)
         {
             for(let x=0;x<cWidth;x++)
@@ -132,8 +130,6 @@
                 
                 const cCell = document.createElement("div");
                 cCell.classList="canvas-cell";
-                cCell.style.width=cellWidth+"px";
-                cCell.style.height=cellWidth+"px";
                 cCell.addEventListener('mouseover',function(){drawCanvas(cCell)});
                 cCanvas.appendChild(cCell);
             }
